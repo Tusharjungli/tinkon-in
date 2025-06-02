@@ -3,12 +3,10 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Image from "next/image";
 
-// Enable static generation for all posts
 export async function generateStaticParams() {
   return getAllPosts().map((post) => ({ slug: post.slug }));
 }
 
-// SEO/OG tags for each blog post
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   const post = getPostBySlug(params.slug);
 
@@ -45,7 +43,6 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-// MAIN BLOG DETAIL PAGE (FIXED)
 export default async function BlogDetailPage({ params }: { params: { slug: string } }) {
   const post = getPostBySlug(params.slug);
 
