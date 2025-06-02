@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     openGraph: {
       title: post.title,
       description: post.description,
-      url: `https://tinkon.in/${params.slug}`,
+      url: `https://tinkon.in/blog/${params.slug}`,
       images: [
         {
           url: post.coverImage || "/images/og-image.jpg",
@@ -63,7 +63,6 @@ export default async function BlogDetailPage({ params }: { params: { slug: strin
       <h1 className="text-4xl font-bold mb-4 mt-2">{post.title}</h1>
       <p className="text-md text-gray-700 mb-6">{post.description}</p>
       <div className="prose prose-lg max-w-none">
-        {/* Render MDX content */}
         <MDXRemote source={post.content} />
       </div>
       <div className="mt-8 text-xs text-gray-400">{post.date}</div>

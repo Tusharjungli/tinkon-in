@@ -34,7 +34,7 @@ export default function BlogListClient({ allPosts }: BlogListClientProps) {
             {allPosts.slice(0, 3).map((post) => (
               <Link
                 key={post.slug}
-                href={`/${post.slug}`}
+                href={`/blog/${post.slug}`}
                 className="min-w-[220px] bg-gray-100 rounded-lg p-2 flex-shrink-0 hover:bg-gray-200 transition"
               >
                 <div className="relative w-full h-24 mb-1 rounded overflow-hidden">
